@@ -3,11 +3,10 @@ package com.example.demo.infrastructure.file;
 import com.example.demo.Common.Config.AppConfig;
 import com.example.demo.Common.Config.Exception.BusinessException;
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 @RequiredArgsConstructor
-public class Filevalidation {
+public class FilevalidationService {
     private final AppConfig appConfig;
     public void validateFile(String contentType, List<String> allowedTypes, String errorMessage) {
         if (!isAllowedType(contentType, allowedTypes)) {

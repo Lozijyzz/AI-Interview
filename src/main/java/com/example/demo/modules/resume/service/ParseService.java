@@ -6,4 +6,7 @@ public class ParseService {
     public static String getTypeName(MultipartFile file){
         return "";
     }
+    public String parseResume(MultipartFile file){
+        return "";
+    }
 }
