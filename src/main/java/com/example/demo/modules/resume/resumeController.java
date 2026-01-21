@@ -18,8 +18,8 @@ public class resumeController {
     public void uploadResume(MultipartFile file){
         uploadService.uploadAndAnalise(file);
     }
-    @PostMapping("/download")
-    public byte[] downloadResume(String fileKey){
-        return
-    }
+//    @PostMapping("/download")
+//    public byte[] downloadResume(String fileKey){
+//        return
+//    }
 }

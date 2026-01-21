@@ -1,12 +1,13 @@
 package com.example.demo.modules.resume.service;
 
+import com.example.demo.infrastructure.file.documentParseService;
+import lombok.RequiredArgsConstructor;
 import org.springframework.web.multipart.MultipartFile;
 
+@RequiredArgsConstructor
 public class ParseService {
-    public static String getTypeName(MultipartFile file){
-        return "";
-    }
+    public final documentParseService parService;
     public String parseResume(MultipartFile file){
-        return "";
+        return parService.parse(file);
     }
 }

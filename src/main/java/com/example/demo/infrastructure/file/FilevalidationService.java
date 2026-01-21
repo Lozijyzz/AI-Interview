@@ -1,7 +1,7 @@
 package com.example.demo.infrastructure.file;
 
 import com.example.demo.Common.Config.AppConfig;
-import com.example.demo.Common.Config.Exception.BusinessException;
+import com.example.demo.Common.Exception.BusinessException;
 import lombok.RequiredArgsConstructor;
 
 import java.util.List;

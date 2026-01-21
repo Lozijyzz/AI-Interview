@@ -12,6 +12,7 @@ import org.bouncycastle.asn1.cms.MetaData;
 import org.springframework.web.multipart.MultipartFile;
 import org.xml.sax.SAXException;
 
+import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
@@ -23,6 +24,19 @@ public class documentParseService {
     public String parse(MultipartFile file){
         try{
             String parse = parse(file.getInputStream());
+            String cleanContent = contentCleanService.clean(parse);
+            return cleanContent;
+        } catch (TikaException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (SAXException e) {
+            throw new RuntimeException(e);
+        }
+    }
+    public String parse(byte[] bytes){
+        try{
+            String parse = parse(new ByteArrayInputStream(bytes));
             String cleanContent = contentCleanService.clean(parse);
             return cleanContent;
         } catch (TikaException e) {
